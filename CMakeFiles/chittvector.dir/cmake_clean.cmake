@@ -1,7 +1,7 @@
 FILE(REMOVE_RECURSE
   "CMakeFiles/chittvector.dir/src/vector.cpp.o"
-  "libchittvector.pdb"
-  "libchittvector.a"
+  "lib/libchittvector.pdb"
+  "lib/libchittvector.so"
 )
 
 # Per-language clean rules from dependency scanning.

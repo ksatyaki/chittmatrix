@@ -1,2 +1,1 @@
-/usr/bin/ar cr libchittvector.a  CMakeFiles/chittvector.dir/src/vector.cpp.o
-/usr/bin/ranlib libchittvector.a
+/usr/bin/c++  -fPIC -g   -shared -Wl,-soname,libchittvector.so -o lib/libchittvector.so CMakeFiles/chittvector.dir/src/vector.cpp.o lib/libchittmatrix.so -Wl,-rpath,/home/ace/chitt_workspace/eclipse_workspace/ChittMatrix/lib 

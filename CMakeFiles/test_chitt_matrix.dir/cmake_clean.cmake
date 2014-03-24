@@ -1,7 +1,7 @@
 FILE(REMOVE_RECURSE
   "CMakeFiles/test_chitt_matrix.dir/src/test_ChittMatrix.cpp.o"
-  "test_chitt_matrix.pdb"
-  "test_chitt_matrix"
+  "bin/test_chitt_matrix.pdb"
+  "bin/test_chitt_matrix"
 )
 
 # Per-language clean rules from dependency scanning.

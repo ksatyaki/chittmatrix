@@ -1,2 +1,1 @@
-/usr/bin/ar cr libchittmatrix.a  CMakeFiles/chittmatrix.dir/src/Matrix.cpp.o
-/usr/bin/ranlib libchittmatrix.a
+/usr/bin/c++  -fPIC -g   -shared -Wl,-soname,libchittmatrix.so -o lib/libchittmatrix.so CMakeFiles/chittmatrix.dir/src/Matrix.cpp.o 

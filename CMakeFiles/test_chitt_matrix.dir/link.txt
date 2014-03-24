@@ -1,1 +1,1 @@
-/usr/bin/c++   -g    CMakeFiles/test_chitt_matrix.dir/src/test_ChittMatrix.cpp.o  -o test_chitt_matrix -rdynamic libchittvector.a libchittmatrix.a 
+/usr/bin/c++   -g    CMakeFiles/test_chitt_matrix.dir/src/test_ChittMatrix.cpp.o  -o bin/test_chitt_matrix -rdynamic lib/libchittvector.so lib/libchittmatrix.so -Wl,-rpath,/home/ace/chitt_workspace/eclipse_workspace/ChittMatrix/lib 

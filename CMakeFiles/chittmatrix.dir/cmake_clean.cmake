@@ -1,7 +1,7 @@
 FILE(REMOVE_RECURSE
   "CMakeFiles/chittmatrix.dir/src/Matrix.cpp.o"
-  "libchittmatrix.pdb"
-  "libchittmatrix.a"
+  "lib/libchittmatrix.pdb"
+  "lib/libchittmatrix.so"
 )
 
 # Per-language clean rules from dependency scanning.
