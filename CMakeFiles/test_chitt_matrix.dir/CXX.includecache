@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ace/chitt_workspace/eclipse_workspace/ChittMatrix/src/test_ChittMatrix.cpp
+Matrix.h
+-
+unistd.h
+-
+

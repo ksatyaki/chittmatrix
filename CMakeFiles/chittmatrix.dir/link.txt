@@ -1,0 +1,2 @@
+/usr/bin/ar cr libchittmatrix.a  CMakeFiles/chittmatrix.dir/src/Matrix.cpp.o
+/usr/bin/ranlib libchittmatrix.a

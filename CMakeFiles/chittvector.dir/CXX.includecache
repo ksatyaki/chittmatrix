@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ace/chitt_workspace/eclipse_workspace/ChittMatrix/src/Matrix.h
+
+/home/ace/chitt_workspace/eclipse_workspace/ChittMatrix/src/vector.cpp
+vector.h
+/home/ace/chitt_workspace/eclipse_workspace/ChittMatrix/src/vector.h
+
+/home/ace/chitt_workspace/eclipse_workspace/ChittMatrix/src/vector.h
+/home/ace/chitt_workspace/eclipse_workspace/ChittMatrix/src/Matrix.h
+-
+math.h
+-
+

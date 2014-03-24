@@ -1,0 +1,2 @@
+/usr/bin/ar cr libchittvector.a  CMakeFiles/chittvector.dir/src/vector.cpp.o
+/usr/bin/ranlib libchittvector.a
