@@ -1,0 +1,24 @@
+#include "Matrix.h"
+#include <unistd.h>
+#include <stdio.h>
+
+using chittmatrix::Matrix;
+
+#define DEBUG(x) printf(x)
+
+int main()
+{
+		Matrix a(3,3);
+		a.Get();
+		
+		DEBUG("SUCKS");
+
+		(~a).Display();
+
+		DEBUG("SUCKS1");
+		(a*~a).Display();
+
+		while(1) { }
+		sleep(1);
+
+}

@@ -6,6 +6,9 @@
  */
 
 #include "Matrix.h"
+#include <stdlib.h>
+#include <math.h>
+#include <stdio.h>
 
 namespace chittmatrix {
 
@@ -137,51 +140,6 @@ bool Matrix::SetElement(double value, int i, int j)
 		*(matrix + (i*c) + j) = value;
 
 	return true;
-}
-
-/**
- * Exchange rows m and n of the matrix.
- */
-void Matrix::XchangeRows(int m, int n)
-{
-	for(int j = 0; j < c; j++)
-	{
-		double temp = *(matrix + m*c + j);
-		*(matrix + m*c + j) = *(matrix + n*c + j);
-		*(matrix + n*c + j) = temp;
-	}
-}
-
-/**
- * Exchange columns m and n of the matrix.
- */
-void Matrix::XchangeColumns(int m, int n)
-{
-	for(int i = 0; i < r; i++)
-	{
-		double temp = *(matrix + i*c + m);
-		*(matrix + i*c + m) = *(matrix + i*c + n);
-		*(matrix + i*c + n) = temp;
-	}
-}
-
-/**
- * Returns the row with the maximum pivot.
- * Returns -1 if all values in the row are 0.
- */
-int Matrix::FindMaxRowPivotBelow(int m)
-{
-	int best_row = -1;
-	double max = *(matrix + m*c + m);
-	for(int i = m+1; i < r; i++)
-	{
-		if( fabs(*(matrix + i*c + m)) > max && fabs(*(matrix + i*c + m)) > 0.0001)
-		{
-			max = fabs(*(matrix + i*c + m));
-			best_row = i;
-		}
-	}
-	return best_row;
 }
 
 /* Overloaded assignment operator */
@@ -484,32 +442,34 @@ Matrix operator ~(const Matrix& a)
 
 	Matrix temp = a;
 
+	if(fabs (delta(temp)) < 0.000001)
+		return null_matrix();
+
 	double var, test;
 	Matrix b = identity(a.r);
-
 	for(int j = 0; j< temp.c; j++)
-	{
-		double elimination_element = *(temp.matrix + j*temp.r + j);
-
-		if( fabs(elimination_element) < 0.0001)
-		{
-			int row_with_max_pivot = temp.FindMaxRowPivotBelow(j);
-			if(row_with_max_pivot == -1)
-			{
-				throw SingularMatrixException();
-			}
-
-			temp.XchangeRows(j, row_with_max_pivot);
-			b.XchangeRows(j, row_with_max_pivot);
-			j--;
-			continue;
-		}
-
 		for(int i = 0; i< temp.r; i++)
 		{
+		printf("Here i,j = (%d, %d)\n", i, j);
 			if(i == j) continue;
 
 			var = *(temp.matrix + i*temp.r + j);
+			double elimination_element = *(temp.matrix + j*temp.r + j);
+
+
+			int index = j;
+
+				printf("Here0.\n");
+			if( fabs(elimination_element) < 0.000001)
+			{
+				printf("Here1.\n");
+				for(index = j; fabs(*(temp.matrix + index*temp.r + j)) < 0.000001 && index < temp.c; index++);
+				if(index == temp.c) return null_matrix();
+
+				elimination_element = *(temp.matrix + index*temp.r + j);
+			}
+
+
 
 			test = var/elimination_element;
 
@@ -519,8 +479,8 @@ Matrix operator ~(const Matrix& a)
 
 			for(int jj = 0; jj< temp.r; jj++)
 			{
-				*(temp.matrix + i*temp.r + jj) -= (test)*(*(temp.matrix + j*temp.r + jj));
-				*(b.matrix + i*b.r + jj) -= (test)*(*(b.matrix + j*b.r + jj));
+				*(temp.matrix + i*temp.r + jj) -= (test)*(*(temp.matrix + index*temp.r + jj));
+				*(b.matrix + i*b.r + jj) -= (test)*(*(b.matrix + index*b.r + jj));
 			}
 
 			//DEBUG LINES
@@ -530,7 +490,6 @@ Matrix operator ~(const Matrix& a)
 			//b.Display();
 			//DEBUG LINES
 		}
-	}
 
 	//DEBUG LINES
 	//printf("\nTEMP\n");
@@ -587,42 +546,55 @@ double delta(const Matrix& a)
 	Matrix temp = a;
 
 	double var, test;
+
 	Matrix b = identity(a.r);
-
 	for(int j = 0; j< temp.c; j++)
-	{
-		double elimination_element = *(temp.matrix + j*temp.r + j);
-
-		if( fabs(elimination_element) < 0.0001)
-		{
-			int row_with_max_pivot = temp.FindMaxRowPivotBelow(j);
-			if(row_with_max_pivot == -1)
-			{
-				return 0;
-			}
-
-			temp.XchangeRows(j, row_with_max_pivot);
-			b.XchangeRows(j, row_with_max_pivot);
-			j--;
-			continue;
-		}
-
 		for(int i = 0; i< temp.r; i++)
 		{
 			if(i == j) continue;
 
 			var = *(temp.matrix + i*temp.r + j);
+			double elimination_element = *(temp.matrix + j*temp.r + j);
+
+			//DEBUG LINES
+			//printf("\n\nJ: %d\n\n", j);
+			//printf("\n\nmatrix[J][J]: %lf\n\n", *(temp.matrix + j*temp.r + j));
+			//DEBUG LINES
+
+
+			int index = j;
+
+
+			if( fabs(elimination_element) < 0.000001)
+			{
+				for(index = j; fabs(*(temp.matrix + index*temp.r + j)) < 0.000001 && index < temp.c; index++);
+				if(index == temp.c) return 0.0;
+
+				elimination_element = *(temp.matrix + index*temp.r + j);
+			}
+
+
 
 			test = var/elimination_element;
 
+			//DEBUG LINES
+			//printf("\n\nTEST: %lf, VAR/TEST: %lf, INDEX: %d\n\n", test, elimination_element, index);
+			//DEBUG LINES
+
 			for(int jj = 0; jj< temp.r; jj++)
 			{
-				*(temp.matrix + i*temp.r + jj) -= (test)*(*(temp.matrix + j*temp.r + jj));
-				*(b.matrix + i*b.r + jj) -= (test)*(*(b.matrix + j*b.r + jj));
+				*(temp.matrix + i*temp.r + jj) -= (test)*(*(temp.matrix + index*temp.r + jj));
+				*(b.matrix + i*b.r + jj) -= (test)*(*(b.matrix + index*b.r + jj));
 			}
 
+			//DEBUG LINES
+			//printf("\npass %d,%d\n", i,j);
+			//temp.Display();
+			//DEBUG LINES
 		}
-	}
+	//DEBUG LINES
+	//temp.Display();
+	//DEBUG LINES
 
 	for(int i = 0; i< temp.r; i++)
 		delta*=(*(temp.matrix + i*temp.r + i));
@@ -632,13 +604,13 @@ double delta(const Matrix& a)
 	return delta;
 }
 
-/**
- *  \brief Expand a matrix after retaining contents
- * Copies the input matrix and returns an expanded matrix. Original
- * matrix remains unaltered. Usage: Matrix A = xpand(B,4,5); - This
- * expands matrix B from its original dimensions to a 4 x 5 matrix.
- * The matrix B is unaltered. The expanded matrix is stored in A.
- */
+/* \brief Expand a matrix after retaining contents
+
+		 * Copies the input matrix and returns an expanded matrix. Original
+		 * matrix remains unaltered. Usage: Matrix A = xpand(B,4,5); - This
+		 * expands matrix B from its original dimensions to a 4 x 5 matrix.
+		 * The matrix B is unaltered. The expanded matrix is stored in A.
+		 */
 Matrix xpand(const Matrix& a, int newr, int newc)
 {
 	if(newr <= a.r || newc <= a.c)
@@ -655,7 +627,7 @@ Matrix xpand(const Matrix& a, int newr, int newc)
 	return temp;
 }
 
-/** \brief Extract a 'sub-matrix' from a bigger matrix
+/* \brief Extract a 'sub-matrix' from a bigger matrix
 		 * Extracts a part of one matrix and returns it.
 		 * Usage: xtract(a,2,2,3,3) will extract a 3x3 matrix
 		 * starting from element 2,2 in matrix a.

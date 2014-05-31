@@ -6,9 +6,27 @@
 
 #IncludeRegexTransform: 
 
+/home/ace/chitt_workspace/eclipse_workspace/ChittMatrix/src/Matrix.h
+stdlib.h
+-
+math.h
+-
+stdio.h
+-
+iostream
+-
+exception
+-
+string
+-
+
 /home/ace/chitt_workspace/eclipse_workspace/ChittMatrix/src/test_ChittMatrix.cpp
 Matrix.h
--
+/home/ace/chitt_workspace/eclipse_workspace/ChittMatrix/src/Matrix.h
 unistd.h
+-
+stdio.h
+-
+iostream
 -
 

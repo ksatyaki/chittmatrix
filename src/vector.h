@@ -3,7 +3,7 @@
 
 using namespace chittmatrix;
 
-/* \brief 2-D Vector
+/** \brief 2-D Vector
  * Vector in 2-D. A subclass of Matrix
  */
 class Vector2d: public Matrix
@@ -13,13 +13,20 @@ class Vector2d: public Matrix
 	: Matrix(2,1)
 	{
 	}
-	/* Find the magnitude of a vector */
+	/**
+	 * Find the magnitude of a vector.
+	 */
 	friend double mag(Matrix);
 	
-	/* Convert a 1*1 Matrix (scalar) to double */
+	/**
+	 * Convert a 1*1 Matrix (scalar) to double.
+	 */
 	friend double toDouble(Matrix);
 };
 
+/** \brief 2-D Vector
+ * Vector in 2-D. A subclass of Matrix
+ */
 class Vector3d: public Matrix
 {
  public:

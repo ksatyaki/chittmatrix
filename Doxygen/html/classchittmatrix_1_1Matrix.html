@@ -114,8 +114,8 @@ Inheritance diagram for chittmatrix::Matrix:</div>
  <div class="center">
   <img src="classchittmatrix_1_1Matrix.png" usemap="#chittmatrix::Matrix_map" alt=""/>
   <map id="chittmatrix::Matrix_map" name="chittmatrix::Matrix_map">
-<area href="classVector2d.html" alt="Vector2d" shape="rect" coords="0,56,109,80"/>
-<area href="classVector3d.html" alt="Vector3d" shape="rect" coords="119,56,228,80"/>
+<area href="classVector2d.html" title="2-D Vector Vector in 2-D. A subclass of Matrix" alt="Vector2d" shape="rect" coords="0,56,109,80"/>
+<area href="classVector3d.html" title="2-D Vector Vector in 2-D. A subclass of Matrix" alt="Vector3d" shape="rect" coords="119,56,228,80"/>
 </map>
  </div></div>
 
@@ -124,6 +124,7 @@ Inheritance diagram for chittmatrix::Matrix:</div>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchittmatrix_1_1Matrix.html#ad58cf615c96778a1098003ea90848b3b">Matrix</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor By default initializes the null matrix. r = 0; c = 0 and matrix = NULL.  <a href="#ad58cf615c96778a1098003ea90848b3b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchittmatrix_1_1Matrix.html#ab53232b2ed2484b83c2c5b8c989bddc8">Matrix</a> (double *, int, int)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchittmatrix_1_1Matrix.html#a2c5ff19978df7737a74d0ed1bbc579d4">Matrix</a> (int, int)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchittmatrix_1_1Matrix.html#a28063166bcb3ccf22609efb910019c42">Matrix</a> (const <a class="el" href="classchittmatrix_1_1Matrix.html">Matrix</a> &amp;)</td></tr>
@@ -151,6 +152,7 @@ Friends</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classchittmatrix_1_1Matrix.html">Matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchittmatrix_1_1Matrix.html#a492b39cef7e644e988bae3f2688d6c4a">operator*</a> (double, const <a class="el" href="classchittmatrix_1_1Matrix.html">Matrix</a> &amp;)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classchittmatrix_1_1Matrix.html">Matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchittmatrix_1_1Matrix.html#ab412dd1bebfeb5bf47f23e4da4468efa">operator!</a> (const <a class="el" href="classchittmatrix_1_1Matrix.html">Matrix</a> &amp;)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classchittmatrix_1_1Matrix.html">Matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchittmatrix_1_1Matrix.html#a5e7ddcedc879fd208902ad910186f3c2">xpand</a> (const <a class="el" href="classchittmatrix_1_1Matrix.html">Matrix</a> &amp;, int, int)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Expand a matrix after retaining contents Copies the input matrix and returns an expanded matrix. Original matrix remains unaltered. Usage: <a class="el" href="classchittmatrix_1_1Matrix.html">Matrix</a> A = xpand(B,4,5); - This expands matrix B from its original dimensions to a 4 x 5 matrix. The matrix B is unaltered. The expanded matrix is stored in A.  <a href="#a5e7ddcedc879fd208902ad910186f3c2"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchittmatrix_1_1Matrix.html#a8cc2f45639ddfa05bf093f2e28a2c7e6">det2</a> (const <a class="el" href="classchittmatrix_1_1Matrix.html">Matrix</a> &amp;)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classchittmatrix_1_1Matrix.html">Matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchittmatrix_1_1Matrix.html#a7ac509f20af3840cbe434e7c4b207ddb">inv2</a> (const <a class="el" href="classchittmatrix_1_1Matrix.html">Matrix</a> &amp;)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classchittmatrix_1_1Matrix.html">Matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchittmatrix_1_1Matrix.html#a61ad95a5122220b502feb2cb980f76b0">cofactormatrix</a> (const <a class="el" href="classchittmatrix_1_1Matrix.html">Matrix</a> &amp;, int, int)</td></tr>
@@ -162,6 +164,7 @@ Friends</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classchittmatrix_1_1Matrix.html">Matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchittmatrix_1_1Matrix.html#ad4b6b9be82b67da97999048dbcc6b028">inv</a> (const <a class="el" href="classchittmatrix_1_1Matrix.html">Matrix</a> &amp;)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchittmatrix_1_1Matrix.html#ae21a3e8414cc907f1c5781db0f05966a">delta</a> (const <a class="el" href="classchittmatrix_1_1Matrix.html">Matrix</a> &amp;)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classchittmatrix_1_1Matrix.html">Matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchittmatrix_1_1Matrix.html#a2ba03e86fdf045dd536eb860998feaf7">xtract</a> (const <a class="el" href="classchittmatrix_1_1Matrix.html">Matrix</a> &amp;, int, int, int, int)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract a 'sub-matrix' from a bigger matrix Extracts a part of one matrix and returns it. Usage: xtract(a,2,2,3,3) will extract a 3x3 matrix starting from element 2,2 in matrix a.  <a href="#a2ba03e86fdf045dd536eb860998feaf7"></a><br/></td></tr>
 </table>
 <hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ad58cf615c96778a1098003ea90848b3b"></a><!-- doxytag: member="chittmatrix::Matrix::Matrix" ref="ad58cf615c96778a1098003ea90848b3b" args="()" -->
@@ -177,6 +180,8 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>Constructor By default initializes the null matrix. r = 0; c = 0 and matrix = NULL. </p>
 
 </div>
 </div>
@@ -210,6 +215,7 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Initialize a matrix with an array of double numbers. This must be a row major representation of the matrix itself. </p>
 
 </div>
 </div>
@@ -237,6 +243,7 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Initialize a zero matrix with the specified dimensions. </p>
 
 </div>
 </div>
@@ -254,6 +261,7 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>The copy constructor. </p>
 
 </div>
 </div>
@@ -270,6 +278,7 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Destructor to clean the data structure. </p>
 
 </div>
 </div>
@@ -288,6 +297,7 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Display the contents of the matrix. </p>
 
 </div>
 </div>
@@ -305,6 +315,7 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Use standard input to get matrix elements. </p>
 
 </div>
 </div>
@@ -332,6 +343,7 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>This function returns the element at a particular location in the matrix Usage: GetElement(3,4) returns A[4][5]. </p>
 
 </div>
 </div>
@@ -349,6 +361,7 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Overloaded assignment operator. </p>
 
 </div>
 </div>
@@ -382,6 +395,7 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Use this function to set the value of a particular element in the martix Usage: SetElement(3.00,4,5) sets A[5][6] to the value 3.00. </p>
 
 </div>
 </div>
@@ -409,6 +423,7 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Changes the existing values of all elements of the matrix to zeroes. Note the british spelling here. </p>
 
 </div>
 </div>
@@ -427,6 +442,7 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Adjoint of small matrices. </p>
 
 </div>
 </div>
@@ -460,6 +476,7 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Cofactor of a particular element in a matrix. </p>
 
 </div>
 </div>
@@ -493,6 +510,7 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Cofactor matrix of a particular element in a matrix. </p>
 
 </div>
 </div>
@@ -510,6 +528,7 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Determinant of large and small matrices. </p>
 
 </div>
 </div>
@@ -527,6 +546,7 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Determinant of small matrices. </p>
 
 </div>
 </div>
@@ -544,6 +564,7 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Determinant of a 2 x 2 matrix. </p>
 
 </div>
 </div>
@@ -561,6 +582,7 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Returns an Identity matrix of dimension specified by the parameter. </p>
 
 </div>
 </div>
@@ -578,6 +600,7 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Inverse of small matrices. </p>
 
 </div>
 </div>
@@ -595,6 +618,7 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Inverse of a 2 x 2 matrix. </p>
 
 </div>
 </div>
@@ -612,6 +636,7 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Check if a matrix is null. This is a bad implementation. </p>
 
 </div>
 </div>
@@ -629,6 +654,7 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Returns a null matrix </p>
 
 </div>
 </div>
@@ -646,6 +672,7 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Overloaded ! operator to get the transpose of a matrix. </p>
 
 </div>
 </div>
@@ -673,6 +700,7 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Overloaded multiplication operator to multiply two matrices. </p>
 
 </div>
 </div>
@@ -700,6 +728,7 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Overloaded multiplication operator to multiply a matrix with a scalar. </p>
 
 </div>
 </div>
@@ -727,6 +756,7 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Overloaded multiplication operator to multiply a matrix with a scalar. </p>
 
 </div>
 </div>
@@ -754,6 +784,7 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Overloaded addition operator to add two matrices. </p>
 
 </div>
 </div>
@@ -781,6 +812,7 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Overloaded subtraction operator to subtract a matrix from another. </p>
 
 </div>
 </div>
@@ -808,6 +840,7 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Overloaded division operator to divide a matrix by a scalar. </p>
 
 </div>
 </div>
@@ -825,6 +858,7 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Inverse of small and large matrices. </p>
 
 </div>
 </div>
@@ -858,6 +892,8 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>Expand a matrix after retaining contents Copies the input matrix and returns an expanded matrix. Original matrix remains unaltered. Usage: <a class="el" href="classchittmatrix_1_1Matrix.html">Matrix</a> A = xpand(B,4,5); - This expands matrix B from its original dimensions to a 4 x 5 matrix. The matrix B is unaltered. The expanded matrix is stored in A. </p>
 
 </div>
 </div>
@@ -903,6 +939,8 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>Extract a 'sub-matrix' from a bigger matrix Extracts a part of one matrix and returns it. Usage: xtract(a,2,2,3,3) will extract a 3x3 matrix starting from element 2,2 in matrix a. </p>
 
 </div>
 </div>
@@ -968,7 +1006,7 @@ Friends</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Mar 24 2014 20:30:47 for ChittMatrix by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Apr 12 2014 13:23:42 for ChittMatrix by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
